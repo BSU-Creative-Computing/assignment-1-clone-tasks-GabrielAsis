@@ -1,11 +1,14 @@
+/*imports google font*/
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
 
+/*removing all spacing and setting font for page*/
 *{
     margin: 0px;
     padding: 0px;
     font-family: 'Titillium Web', sans-serif;
 }
 
+/*sets size and color of top bar and also turns child elements into flexboxes*/
 .top-bar{
     padding: 16px;
     background-color: #1e90ff;
@@ -16,24 +19,29 @@
     justify-content: space-between;
 }
 
+/*sets y-axis alignment and font size for logo*/
 .top-bar h1{
     align-self: center;
     font-size: 28px;
 }
 
+/*sets y-axis alignment for searchbar*/
 .searchbar{
     align-self: center;
 }
 
+/*sets size of text input*/
 .searchbar input{
     padding: 10px;
     width: 18vw;
 }
 
+/*sets y-axis for buttons*/
 .options{
     align-self: center;
 }
 
+/*sets color, text-decoration, font-size, and spacing of buttons*/
 .options a{
     color: white;
     text-decoration: none;
@@ -41,10 +49,12 @@
     font-size: 18px;
 }
 
+/*sets styling for when button is hovered*/
 .options a:hover{
     text-decoration: underline;
 }
 
+/*sets elements of the main content div to flexboxes*/
 .main {
     margin-top: 25px;
     display: flex;
@@ -52,12 +62,14 @@
     flex-wrap: wrap;
 }
 
+/*sets size of big container*/
 .big{
     width: 40vw;
     margin-right: 7px;
     flex-wrap: wrap;
 }
 
+/*sets size and spacing of small containers*/
 .small{
     flex: 25%;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
@@ -66,35 +78,42 @@
     flex-wrap: wrap;
 }
 
+/*sets stylings for movie title on small containers*/
 .small h2{
     font-size: 23px;
     margin-bottom: 10px;
 }
 
+/*turns all small containers into flexboxes*/
 .small-container{
     display: flex;
     flex-wrap: wrap;
     width: 28%;
 }
 
+/*sets height of image in big container*/
 .big img{
     height: 37%;
 }
 
+/*width of all images*/
 img{
     width: 100%;
 }
 
+/*styling for details div*/
 .details{
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
     padding: 10px;
     margin-top: -6px;
 }
 
+/*sets font-size for title of movie in deatils div*/
 .details h2{
     font-size: 28px;
 }
 
+/*sets alignment of x and y axis and spacing of button*/
 .button{
     display: flex;
     justify-content: end;
@@ -103,6 +122,7 @@ img{
     margin-bottom: 100px;
 }
 
+/*sets color, bg-color, font-size, and radius of button*/
 button{
     background-color: #1e90ff;
     border: none;
@@ -113,12 +133,14 @@ button{
     transition: 0.3s;
 }
 
+/*sets styling for when button is hovered*/
 button:hover{
     opacity: 0.8;
     cursor: pointer;
 }
 
-@media screen and (min-width: 800px) and (max-width: 1025px) {
+/*changes size and spacing of topbar, font-sizes, and images when screen size is between 800px and 1024px*/
+@media screen and (min-width: 799px) and (max-width: 1024px) {
     .top-bar{
         padding: 14px;
     }
@@ -151,7 +173,8 @@ button:hover{
     }
 } 
 
-@media screen and (min-width: 479px) and (max-width: 800px) {
+/*changes size and spacing of topbar, font-sizes, and images when screen size is between 479px and 799px*/
+@media screen and (min-width: 479px) and (max-width: 799px) {
     .details h2{
         font-size: 24px;
     }

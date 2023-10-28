@@ -1,13 +1,21 @@
-body{
+/*removing all spacing and setting font for page*/
+*{
     margin: 0px;
     padding: 0px;
     font-family: monospace;
 }
 
+/*hides the scrollbar while still being able to scroll the page*/
+body::-webkit-scrollbar { 
+    display: none;
+}
+
+/*adds space to the logo*/
 .logo{
     padding: 15px;
 }
 
+/*turns images into flexboxes*/
 .container{
     display: flex;
     flex-direction: row;
@@ -16,22 +24,26 @@ body{
     padding: 0px;
 }
 
+/*changes width of images in container*/
 .container img{
-    width: 32.95vw;
+    width: 33.33vw;
     margin: 0px;
     padding: 0px;
 }
 
+/*setting font size and padding for paragraphs*/
 .paragraphs {
     display: block;
     font-size: 20px;
     padding: 20px 25px;
 }
 
+/*only adds margin to the first paragraph*/
 .paragraphs p:first-child {
     margin-bottom: 50px;
 }
 
+/*setting color, bg-color, font, and width of footer*/
 footer {
     text-align: center;
     color: white;
@@ -42,20 +54,17 @@ footer {
     margin: 0px;
 }
 
-@media screen and (min-width: 799px) and (max-width: 1246px) {
-    .container img{
-        width: 33.33vw;
-    }
-} 
 
-@media screen and (min-width: 479px) and (max-width: 800px) {
+/*changes width of each image to take up half the screen when screen size is between 481px and 800px*/
+@media screen and (min-width: 481px) and (max-width: 800px) {
     .container img{
         width: 50vw;
     }
 } 
 
+/*changes width of each image to take up all the screen when screen size is 480px and bellow*/
 @media screen and (max-width: 480px){
     .container img{
         width: 100vw;
     }
-} 
+}
