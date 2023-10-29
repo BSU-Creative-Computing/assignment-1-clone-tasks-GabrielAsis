@@ -1,3 +1,4 @@
+/*ADD COMMENTS*/
 * {
   margin: 0;
   padding: 0;
@@ -9,64 +10,102 @@
   background-color: #8ccff7;
   margin-bottom: 60px;
 }
-
-.light-blue, .smaller {
-  background-color: #4e89ae;
+.image .three-hundred, .image .two-hundred {
+  display: none;
 }
 
-.blue, .small {
-  background-color: #43658b;
+.row-container {
+  margin-top: 10px;
 }
-
-.red, .big {
-  background-color: #ed6663;
-}
-
-.yellow, .bigger {
-  background-color: #ffa372;
-}
-
-.smaller {
-  width: 70px;
-  height: 70px;
-}
-
-.small {
-  width: 80px;
-  height: 80px;
-}
-
-.big {
-  width: 90px;
-  height: 90px;
-}
-
-.bigger {
-  width: 100px;
-  height: 100px;
-}
-
-.row {
+.row-container .row {
   width: 100%;
   height: 40px;
 }
-
-.circle-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
+.row-container .row:hover {
+  background-color: #444;
+  cursor: pointer;
+}
+.row-container .light-blue {
+  background-color: #4e89ae;
+}
+.row-container .blue {
+  background-color: #43658b;
+}
+.row-container .red {
+  background-color: #ed6663;
+}
+.row-container .yellow {
+  background-color: #ffa372;
 }
 
-.circle {
+.circle-container {
+  display: block;
+  margin: auto;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.circle-container .circle {
   border-radius: 50%;
-  display: inline-block;
-  margin: 5px;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.circle-container .circle:hover {
+  background-color: #444;
+  cursor: pointer;
+}
+.circle-container .smaller {
+  background-color: #4e89ae;
+  width: 70px;
+  height: 70px;
+}
+.circle-container .small {
+  background-color: #43658b;
+  width: 80px;
+  height: 80px;
+}
+.circle-container .big {
+  background-color: #ed6663;
+  width: 90px;
+  height: 90px;
+}
+.circle-container .bigger {
+  background-color: #ffa372;
+  width: 100px;
+  height: 100px;
 }
 
 footer {
   background-color: #8ccff7;
   width: 100%;
   height: 50px;
+}
+
+@media (min-width: 621px) {
+  .circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52vh;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .image .three-hundred {
+    display: block;
+  }
+  .four-hundred {
+    display: none;
+  }
+}
+@media (max-width: 481px) {
+  .image .two-hundred {
+    display: block;
+  }
+  .image .three-hundred {
+    display: none;
+  }
+  .four-hundred {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */
