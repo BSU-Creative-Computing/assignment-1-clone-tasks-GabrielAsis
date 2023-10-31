@@ -1,59 +1,71 @@
-$smaller-circle: 70px;
-$small-circle: 80px;
-$big-circle: 90px;
-$bigger-circle: 100px;
-$color-1: #4e89ae;
-$color-2: #43658b;
-$color-3: #ed6663;
-$color-4: #ffa372;
-$header-footer-color: #8ccff7;
-$hover-color: #444;
-$footer-height: 50px;
-/*ADD COMMENTS*/
+$circle-sizes: 70px,80px,90px,100px; /*sizes for circles in a list*/
+$colors:#4e89ae, #43658b, #ed6663, #ffa372, #8ccff7, #444; /*colors to be used in this page in  a list*/ 
+
+/*@mixin for circle's backround-color, width, and height*/
+@mixin circle-styling($bg-color, $size){
+    background-color: $bg-color;
+    width: $size;    
+    height: $size;
+}
+
+/*@mixin for media querie max-width*/
+@mixin max-width-breakpoint($max-width){
+    @media screen and (max-width: $max-width) {
+        @content;
+    }
+}
+
+/*removes all spacing in page*/
 *{
     margin: 0;
     padding: 0;
 }
 
+/*styling of immages*/
 .image{
     display: flex;
     justify-content: center;
-    background-color: $header-footer-color;
+    background-color: nth($colors, 5);
     margin-bottom: 60px;
 
+    /*hides the other image resolutions*/
     .three-hundred, .two-hundred{
         display: none;
     }
 }
 
+/*styling for rows*/
 .row-container{
     margin-top: 10px;
+    /*setting up default size and hover color for rows*/
     .row{
         width: 100%;
         height: 40px;
         &:hover{
-            background-color: $hover-color;
+            background-color: nth($colors, 6);
             cursor: pointer;
         }
     }
 
+    /*changing indivindual row's color*/
     .light-blue{
-        background-color: $color-1; 
+        background-color: nth($colors, 1); 
     }
     
     .blue{
-        background-color: $color-2;
+        background-color: nth($colors, 2);
     }
     
     .red{
-        background-color: $color-3;
+        background-color: nth($colors, 3);
     }
     
     .yellow{
-        background-color: $color-4;
+        background-color: nth($colors, 4);
     }
 }
 
+/*styling for circles*/
 .circle-container{
     display: block;
     margin: auto;
@@ -61,48 +73,44 @@ $footer-height: 50px;
     margin-top: 50px;
     margin-bottom: 50px;
 
+    /*setting up default radius, spacing, and hover color to circles*/
     .circle{
         border-radius: 50%;
         margin: auto;
         margin-top: 5px;
         margin-bottom: 5px;
         &:hover{
-            background-color: $hover-color;
+            background-color: nth($colors , 6);
             cursor: pointer;
         }
     }
 
+    /*changing individual circle's size and color*/
     .smaller{
-        background-color: $color-1;
-        width: $smaller-circle;
-        height: $smaller-circle;
+        @include circle-styling(nth($colors, 1),nth($circle-sizes, 1))
     }
     
     .small{
-        background-color: $color-2;
-        width: $small-circle;
-        height: $small-circle;
+        @include circle-styling(nth($colors, 2),nth($circle-sizes, 2 ))
     }
     
     .big{
-        background-color: $color-3;
-        width: $big-circle;
-        height: $big-circle;
+        @include circle-styling(nth($colors, 3),nth($circle-sizes, 3) )
     }
     
     .bigger{
-        background-color: $color-4;
-        width: $bigger-circle;
-        height: $bigger-circle;
+        @include circle-styling(nth($colors, 4),nth($circle-sizes, 4) )
     }
 }
 
+/*footer styling*/
 footer{
-    background-color: $header-footer-color;
+    background-color: nth($colors, 5);
     width: 100%;
-    height: $footer-height;
+    height: 50px;
 }
 
+/*media querie to change if circles are stack vertically or horizontally*/
 @media (min-width: 621px){
     .circle-container{
         display: flex;
@@ -112,7 +120,8 @@ footer{
     }
 }
 
-@media only screen and (max-width: 800px){
+/*using @include to use @mixin earlier for max-width queries to display hidden image resolutions*/
+@include max-width-breakpoint(800px){
     .image{        
         .three-hundred{
             display: block;
@@ -124,7 +133,8 @@ footer{
     }
 }
 
-@media (max-width: 481px){
+/*using @include to use @mixin earlier for max-width queries to display hidden image resolutions*/
+@include max-width-breakpoint(481px){
     .image{        
         .two-hundred{
             display: block;

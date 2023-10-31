@@ -1,21 +1,30 @@
-/*ADD COMMENTS*/
+/*sizes for circles in a list*/
+/*colors to be used in this page in  a list*/
+/*@mixin for circle's backround-color, width, and height*/
+/*@mixin for media querie max-width*/
+/*removes all spacing in page*/
 * {
   margin: 0;
   padding: 0;
 }
 
+/*styling of immages*/
 .image {
   display: flex;
   justify-content: center;
   background-color: #8ccff7;
   margin-bottom: 60px;
+  /*hides the other image resolutions*/
 }
 .image .three-hundred, .image .two-hundred {
   display: none;
 }
 
+/*styling for rows*/
 .row-container {
   margin-top: 10px;
+  /*setting up default size and hover color for rows*/
+  /*changing indivindual row's color*/
 }
 .row-container .row {
   width: 100%;
@@ -38,12 +47,15 @@
   background-color: #ffa372;
 }
 
+/*styling for circles*/
 .circle-container {
   display: block;
   margin: auto;
   width: 100%;
   margin-top: 50px;
   margin-bottom: 50px;
+  /*setting up default radius, spacing, and hover color to circles*/
+  /*changing individual circle's size and color*/
 }
 .circle-container .circle {
   border-radius: 50%;
@@ -76,12 +88,14 @@
   height: 100px;
 }
 
+/*footer styling*/
 footer {
   background-color: #8ccff7;
   width: 100%;
   height: 50px;
 }
 
+/*media querie to change if circles are stack vertically or horizontally*/
 @media (min-width: 621px) {
   .circle-container {
     display: flex;
@@ -90,7 +104,8 @@ footer {
     width: 52vh;
   }
 }
-@media only screen and (max-width: 800px) {
+/*using @include to use @mixin earlier for max-width queries to display hidden image resolutions*/
+@media screen and (max-width: 800px) {
   .image .three-hundred {
     display: block;
   }
@@ -98,7 +113,8 @@ footer {
     display: none;
   }
 }
-@media (max-width: 481px) {
+/*using @include to use @mixin earlier for max-width queries to display hidden image resolutions*/
+@media screen and (max-width: 481px) {
   .image .two-hundred {
     display: block;
   }
